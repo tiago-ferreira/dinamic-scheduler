@@ -30,9 +30,7 @@ public class JobScheduler {
 			Trigger trigger = TriggerBuilder
 					.newTrigger()
 					.withIdentity(greetings, person.getName())
-					.withSchedule(
-							CronScheduleBuilder.dailyAtHourAndMinute(hour,
-									minute)).build();
+					.withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(hour,minute)).build();
 
 			sched.scheduleJob(job, trigger);
 
@@ -40,7 +38,6 @@ public class JobScheduler {
 		} catch (SchedulerException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }

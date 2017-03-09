@@ -15,9 +15,6 @@ public class GreetingsJob implements Job {
 		String greetings = (String) context.getJobDetail().getJobDataMap().get("greetings");
 		Person person = (Person) context.getJobDetail().getJobDataMap().get("person");
 		String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-		
 		System.out.println(date + " " + greetings + person.getName());
-
 	}
-
 }

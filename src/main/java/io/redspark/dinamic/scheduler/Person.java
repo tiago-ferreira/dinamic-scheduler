@@ -3,7 +3,7 @@ package io.redspark.dinamic.scheduler;
 
 public class Person {
 	
-    private final String name;
+    private String name;
 
     public Person(String name) {
         this.name = name;
