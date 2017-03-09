@@ -2,7 +2,6 @@ package io.redspark.dinamic.scheduler;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
@@ -15,7 +14,7 @@ public class GreetingsJob implements Job {
 			throws JobExecutionException {
 		String greetings = (String) context.getJobDetail().getJobDataMap().get("greetings");
 		Person person = (Person) context.getJobDetail().getJobDataMap().get("person");
-		String date = LocalDateTime.now().format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG));
+		String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 		
 		System.out.println(date + " " + greetings + person.getName());
 

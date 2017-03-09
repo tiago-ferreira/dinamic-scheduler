@@ -6,6 +6,7 @@ public class JobSchedulerBuilder {
 	
 	private JobScheduler jobScheduler = new JobScheduler();
 	private final Person person;
+	private LocalDateTime today = LocalDateTime.now();
 	
 	public JobSchedulerBuilder(final Person person) {
 		this.person = person;
@@ -13,19 +14,16 @@ public class JobSchedulerBuilder {
 	
 	public void morning() {
 		String greetings = "Good morning, ";
-		LocalDateTime today = LocalDateTime.now().plusMinutes(1);
-		jobScheduler.schedule(person, greetings, today.getHour(), today.getMinute());
+		jobScheduler.schedule(person, greetings, today.getHour(), today.plusMinutes(1).getMinute());
 	}
 	
 	public void afternoon() {
 		String greetings = "Good Afternoon, ";
-		LocalDateTime today = LocalDateTime.now().plusMinutes(1);
-		jobScheduler.schedule(person, greetings, today.getHour(), today.getMinute());
+		jobScheduler.schedule(person, greetings, today.getHour(), today.plusMinutes(2).getMinute());
 	}
 	
 	public void night() {
 		String greetings = "Good night, ";
-		LocalDateTime today = LocalDateTime.now().plusMinutes(1);
-		jobScheduler.schedule(person, greetings, today.getHour(), today.getMinute());
+		jobScheduler.schedule(person, greetings, today.getHour(), today.plusMinutes(3).getMinute());
 	}
 }
