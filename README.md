@@ -1,2 +1,2 @@
 # dinamic-scheduler
-Sample to scheule a job with quartz.
+Sample to schedule a job with quartz.
